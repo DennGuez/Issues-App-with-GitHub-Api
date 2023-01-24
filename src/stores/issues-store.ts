@@ -1,10 +1,10 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
+import { State } from 'src/issues/interfaces/Issues'
 
 export const useIssuesStore = defineStore('issues', () => {
 
-    // TODO crear un enum tipo de dato
-    const state = ref('')
+    const state = ref<State>(State.All)
     const labels = ref<string[]>([])
 
     return {

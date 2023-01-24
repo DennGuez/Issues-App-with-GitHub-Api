@@ -18,19 +18,5 @@
 <script setup lang="ts">
 import useLabels from 'src/issues/composables/useLabels'
 import LoaderSpinner from 'src/shared/components/LoaderSpinner.vue'
-
-
 const { labelsQuery, toggleLabel, selectedlabels } = useLabels()
-
-console.log( labelsQuery.data.value )
-
-
-
-
-
-
 </script>
-
-<style scoped>
-
-</style>

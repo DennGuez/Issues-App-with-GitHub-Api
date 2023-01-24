@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/vue-query';
 import { githubApi } from 'src/api/githubApi'
+import { computed } from 'vue';
 import { Issue } from '../interfaces/Issues'
 
 const getIssueByNumber = async( issueNumber: number  ):Promise<Issue> => {
@@ -24,10 +25,11 @@ const useIssue = ( issueNumber: number ) => {
 
    const issueCommentsQuery = useQuery(
       ['issue', issueNumber, 'comments'],
+      // () => getIssueComments( issueNumber ),
       () => getIssueComments( issueQuery.data.value?.number || 0 ),
       {
          staleTime: 1000 * 15,
-         enabled: !!issueQuery.data.value
+         enabled: computed( () => !!issueQuery.data.value ) 
       }
    )
 

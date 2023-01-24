@@ -40,10 +40,5 @@ import useIssue from '../composables/useIssue'
 const route = useRoute()
 const { id } = route.params
 
-
 const { issueQuery, issueCommentsQuery } = useIssue( +id )
 </script>
-
-<style scoped>
-
-</style> 
